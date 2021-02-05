@@ -1,11 +1,13 @@
 {
     "name": "aem-site-template-basic-theme",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "description": "Basic AEM site theme",
     "private": true,
     "main": "src/main.ts",
     "license": "MIT License, Copyright 2020 Adobe Systems Incorporated",
     "scripts": {
+        "build-aem": "aem-site-template-builder",
+        "deploy": "SITE_TEMPLATE_ZIP=\"$(node -p -e \"require('./package.json').name\")-$(node -p -e \"require('./package.json').version\").zip\" && curl -u admin:admin -F file=$SITE_TEMPLATE_ZIP http://localhost:4502/conf/global/site-templates.import.html",
         "build": "webpack -p --config ./webpack.prod.js",
         "live": "watch 'webpack -d --env dev --config ./webpack.dev.js' src & aem-site-theme-builder live & browser-sync start --proxy 'localhost:7000' --files 'dist'"
     },
