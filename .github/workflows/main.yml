@@ -41,7 +41,7 @@ jobs:
           tags: false 
 
       - name: Build Site Template (using bumped version)
-        run: npm run build
+        run: npm run build-aem
 
       - name: Read package.json
         id: package
