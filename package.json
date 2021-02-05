@@ -1,6 +1,6 @@
 {
     "name": "aem-site-template-basic-theme",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Basic AEM site theme",
     "private": true,
     "main": "src/main.ts",
